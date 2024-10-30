@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КиноМонстр - Главная</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .movie-card img {
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .movie-card:hover img {
+            transform: scale(1.05);
+        }
+        .movie-card p {
+            font-weight: bold;
+            text-align: center;
+        }
+        .review-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #222;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">КиноМонстр</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="loadContent('home')">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('films')">Фильмы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('series')">Сериалы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('ratings')">Рейтинг фильмов</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('contacts')">Контакты</a>
+            </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Поиск">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Поиск</button>
+        </form>
+
+        <a href="#" class="btn btn-outline-light ml-2">Вход</a>
+    </div>
+</nav>
+
+
+<div class="container mt-4" id="content">
+    <h2 class="text-center mb-4">Новые фильмы</h2>
+    <div class="row">
+        <div class="col-md-3 movie-card">
+            <a href="#" onclick="alert('Интерстеллар')">
+                <img src="https://i.ytimg.com/vi/m2vijtILDuk/maxresdefault.jpg" class="img-fluid rounded" alt="Интерстеллар">
+            </a>
+            <p>Интерстеллар</p>
+        </div>
+        <div class="col-md-3 movie-card">
+            <a href="#" onclick="alert('Матрица')">
+                <img src="https://upload.wikimedia.org/wikipedia/ru/9/9d/Matrix-DVD.jpg" class="img-fluid rounded" alt="Матрица">
+            </a>
+            <p>Матрица</p>
+        </div>
+        <div class="col-md-3 movie-card">
+            <a href="#" onclick="alert('Облачный атлас')">
+                <img src="https://upload.wikimedia.org/wikipedia/ru/3/31/Cloud_Atlas_film.jpg" class="img-fluid rounded" alt="Облачный атлас">
+            </a>
+            <p>Облачный атлас</p>
+        </div>
+        <div class="col-md-3 movie-card">
+            <a href="#" onclick="alert('Безумный Макс')">
+                <img src="https://upload.wikimedia.org/wikipedia/ru/6/6e/Mad_Max_Fury_Road.jpg" class="img-fluid rounded" alt="Безумный Макс">
+            </a>
+            <p>Безумный Макс</p>
+        </div>
+    </div>
+
+
+    <h3 class="text-center mt-5">Отзывы зрителей</h3>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="review-card">
+                <h5>Байзакова Малика</h5>
+                <p>"Отличный фильм, захватывающий с первой минуты до последней. Рекомендую к просмотру!"</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <h5>Курамаева Галия</h5>
+                <p>"Очень атмосферно, погружение в сюжет полное. Смотреть обязательно."</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <h5>Кубанычова Балнур</h5>
+                <p>"Невероятные спецэффекты и потрясающий сюжет. Один из лучших фильмов года!"</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="text-center py-3 mt-4">
+    <p>&copy; 2024 КиноМонстр - Все права защищены</p>
+    <p>Контакты: info@kinomonster.com | Телефон: +123 456 7890</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+    function loadContent(page) {
+        // Место для загрузки динамического контента
+        document.getElementById('content').innerHTML = `<h3 class="text-center">Загрузка страницы: ${page}</h3>`;
+    }
+</script>
+</body>
+</html>
